@@ -61,7 +61,7 @@ export const StyledTetris = styled.div`
       }
       & > div:nth-child(5) {
         grid-column: 2 / 3;
-        grid-row: 1 / 4;
+        grid-row: 1 / 5;
       }
       & > div:nth-child(6) {
         grid-column: 2 / 3;

@@ -10,9 +10,8 @@ export const StyledDisplay = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: 16px;
   border-left: 0px;
-  min-height: 30px;
+  /* min-height: 30px; */
   width: max(fit-content, 50%);
   border-radius: 0px 8px 8px 0px;
   color: ${(props) => (props.gameOver ? "red" : "#999")};
