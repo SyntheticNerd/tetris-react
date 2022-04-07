@@ -1,4 +1,11 @@
 import styled from "styled-components";
+
+export const Score = styled.div`
+  /* display: flex; */
+  border: 2px solid red;
+  flex-wrap: wrap;
+`;
+
 export const StyledDisplay = styled.div`
   box-sizing: border-box;
   display: flex;
@@ -6,7 +13,7 @@ export const StyledDisplay = styled.div`
   padding: 16px;
   border-left: 0px;
   min-height: 30px;
-  width: 100%;
+  width: max(fit-content, 50%);
   border-radius: 0px 8px 8px 0px;
   color: ${(props) => (props.gameOver ? "red" : "#999")};
   font-family: Pixel, Arial, Helvetica, sans-serif;

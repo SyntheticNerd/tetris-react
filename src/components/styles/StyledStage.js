@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledStage = styled.div`
   display: grid;
+  /* flex-basis: 300px; */
   grid-template-rows: repeat(${props => props.height}, min(20px, 4.2vh));
   grid-template-columns: repeat(${props=>props.width}, min(20px, 4.2vh));
   /* height: 800px; */

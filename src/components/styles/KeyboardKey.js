@@ -4,8 +4,6 @@ export const KeyboardWrapper = styled.div`
     grid-template-columns: repeat(3, 40px);
     grid-template-rows: repeat(3, 1fr);
     gap: min(16px, 2vh);
-    margin-left: 8px;
-    margin-top: 16px;
     & > button:nth-child(1) {
         grid-column: 2 / 3;
     }

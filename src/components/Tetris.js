@@ -4,6 +4,7 @@ import { createStage, checkCollision } from "../gameHelpers";
 
 // Styled Components
 import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
+import { Score } from "./styles/StyledDisplay";
 
 // Custom Hooks
 import { useInterval } from "../hooks/useInterval";
@@ -15,7 +16,6 @@ import { useGameStatus } from "../hooks/useGameStatus";
 import Stage from "./Stage";
 import Display from "./Display";
 import StartBtn from "./StartBtn";
-import { KeyboardKey } from "./styles/KeyboardKey";
 import KeyBoard from "./KeyBoard";
 
 const Tetris = () => {
@@ -72,7 +72,7 @@ const Tetris = () => {
   const keyUp = (e) => {
     if (!gameOver) {
       // if (e.keyCode === 40 || e === 40) {
-        setDropTime(1000 / (level + 1) + 200);
+      setDropTime(1000 / (level + 1) + 200);
       // }
     }
   };
@@ -85,7 +85,7 @@ const Tetris = () => {
   const move = (e) => {
     //have to add the prevent default so spacebar will work
     if (!gameOver) {
-      e.keyCode&&e.preventDefault();
+      e.keyCode && e.preventDefault();
       if (e.keyCode === 37 || e === 37) {
         movePlayer(-1);
       } else if (e.keyCode === 39 || e === 39) {
@@ -112,22 +112,20 @@ const Tetris = () => {
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
+          <StartBtn callback={startGame} />
+          {/* <Score> */}
+          <Display text={`Score: ${score}`} />
+          <Display text={`Rows: ${rows}`} />
+          <Display text={`Level: ${level}`} />
+          {/* </Score> */}
+          <KeyBoard gameStart={gameStart} move={move} keyUp={keyUp} />
           {gameOver ? (
             <div>
-              <Display text={`Score: ${score}`} />
-              <Display text={`Rows: ${rows}`} />
-              <Display text={`Level: ${level}`} />
               <Display gameOver={gameOver} text='Game Over' />
             </div>
           ) : (
-            <div>
-              <Display text={`Score: ${score}`} />
-              <Display text={`Rows: ${rows}`} />
-              <Display text={`Level: ${level}`} />
-            </div>
+            <div></div>
           )}
-          <StartBtn callback={startGame} />
-          <KeyBoard gameStart={gameStart} move={move} keyUp={keyUp}/>
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
