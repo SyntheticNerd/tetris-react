@@ -11,6 +11,7 @@ export const StyledDisplay = styled.div`
   display: flex;
   align-items: center;
   border-left: 0px;
+  padding-left: 16px;
   /* min-height: 30px; */
   width: max(fit-content, 50%);
   border-radius: 0px 8px 8px 0px;
