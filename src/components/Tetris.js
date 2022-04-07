@@ -112,20 +112,20 @@ const Tetris = () => {
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
-          <StartBtn callback={startGame} />
+          <StartBtn callback={startGame} gameOver={gameOver} gameStart={gameStart}/>
           {/* <Score> */}
           <Display text={`Score: ${score}`} />
           <Display text={`Rows: ${rows}`} />
           <Display text={`Level: ${level}`} />
           {/* </Score> */}
-          <KeyBoard gameStart={gameStart} move={move} keyUp={keyUp} />
-          {gameOver ? (
+          <KeyBoard gameStart={gameStart} move={move} keyUp={keyUp} setDropTime={setDropTime} />
+          {/* {gameOver ? (
             <div>
               <Display gameOver={gameOver} text='Game Over' />
             </div>
           ) : (
             <div></div>
-          )}
+          )} */}
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>

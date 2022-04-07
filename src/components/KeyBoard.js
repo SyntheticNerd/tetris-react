@@ -2,10 +2,13 @@ import React from "react";
 import { KeyboardKey, KeyboardWrapper } from "./styles/KeyboardKey";
 import { useState, useEffect, useCallback, useRef } from "react";
 
-export default function KeyBoard({ gameStart, move, keyUp }) {
+export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
   const [timeoutId, setTimeoutId] = useState(0);
   const [keyCode, setKeyCode] = useState(40);
   const [clicking, setClicking] = useState(false);
+  const [holding, setHolding] = useState(false);
+  const [moveNum, setMoveNum] = useState(0);
+  // const [horiz, setHoriz] = useState(0);
 
   const repeat = useCallback(() => {
     move(keyCode);
@@ -14,59 +17,62 @@ export default function KeyBoard({ gameStart, move, keyUp }) {
   }, [keyCode]);
 
   function onMouseDown(code) {
+    setKeyCode(code);
+    setClicking(true);
     move(code);
-    keyUp();
-    // setKeyCode(code);
-    // setClicking(true);
-    // console.log(keyCode);
   }
 
   function onMouseUp() {
-    // console.log("clear");
-    // clearTimeout(timeoutId);
-    // setTimeoutId(0);
-    // setClicking(false);
-    // keyUp();
+    setClicking(false);
+    setHolding(false);
+    keyUp();
+    clearTimeout(timeoutId);
+    setTimeoutId(0);
   }
-
-  //   btn.mousedown = function () {
-  //     repeat();
-  //   };
-
-  //   btn.mouseup = function () {
-  //     clearTimeout(t);
-  //   };
-
-  //   function holdit(btn, action, start, speedup) {
-  //     let t;
-  //     let repeat = function () {
-  //       action();
-  //       t = setTimeout(repeat, start);
-  //       start = start / speedup;
-  //     };
-
-  //     btn.mousedown = function () {
-  //       repeat();
-  //     };
-
-  //     btn.mouseup = function () {
-  //       clearTimeout(t);
-  //     };
-  //   }
 
   useEffect(() => {
     if (gameStart) {
+      clearTimeout(timeoutId);
+      setTimeoutId(0);
       if (clicking) {
-        repeat();
+        if (keyCode === 40) {
+          let t = setTimeout(() => {
+            console.log("holding");
+            setDropTime(30);
+          }, 500);
+          setTimeoutId(t);
+        } else if (keyCode === 39 || keyCode === 37) {
+          if (!holding) {
+            let t = setTimeout(() => {
+              setHolding(true);
+            }, 500);
+            setTimeoutId(t);
+          } else if (holding) {
+            move(keyCode);
+            let t = setTimeout(() => {
+              console.log("holding");
+              setMoveNum(moveNum + 1);
+            }, 100);
+            setTimeoutId(t);
+          }else{
+            console.log("doing nothing?")
+            return;
+          }
+        }
       }
     }
-  }, [clicking, gameStart, repeat]);
+  }, [clicking, moveNum, holding]);
 
   return (
     <KeyboardWrapper>
       <KeyboardKey
         onMouseDown={() => onMouseDown(40)}
+        onTouchStart={() => onMouseDown(40)}
         onMouseUp={() => onMouseUp()}
+        onMouseLeave={() => onMouseUp()}
+        onMouseOut={() => onMouseUp()}
+        onTouchEnd={() => onMouseUp()}
+        onTouchCancel={() => onMouseUp()}
       >
         {gameStart ? (
           <img src={process.env.PUBLIC_URL + "/icons/glowUpIcon.png"} alt='' />
@@ -76,7 +82,12 @@ export default function KeyBoard({ gameStart, move, keyUp }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(37)}
+        onTouchStart={() => onMouseDown(37)}
         onMouseUp={() => onMouseUp()}
+        onMouseLeave={() => onMouseUp()}
+        onMouseOut={() => onMouseUp()}
+        onTouchEnd={() => onMouseUp()}
+        onTouchCancel={() => onMouseUp()}
       >
         {gameStart ? (
           <img
@@ -89,7 +100,12 @@ export default function KeyBoard({ gameStart, move, keyUp }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(40)}
+        onTouchStart={() => onMouseDown(40)}
         onMouseUp={() => onMouseUp()}
+        onMouseLeave={() => onMouseUp()}
+        onMouseOut={() => onMouseUp()}
+        onTouchEnd={() => onMouseUp()}
+        onTouchCancel={() => onMouseUp()}
       >
         {gameStart ? (
           <img
@@ -102,7 +118,12 @@ export default function KeyBoard({ gameStart, move, keyUp }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(39)}
+        onTouchStart={() => onMouseDown(39)}
         onMouseUp={() => onMouseUp()}
+        onMouseLeave={() => onMouseUp()}
+        onMouseOut={() => onMouseUp()}
+        onTouchEnd={() => onMouseUp()}
+        onTouchCancel={() => onMouseUp()}
       >
         {gameStart ? (
           <img
@@ -115,7 +136,12 @@ export default function KeyBoard({ gameStart, move, keyUp }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(32)}
+        onTouchStart={() => onMouseDown(32)}
         onMouseUp={() => onMouseUp()}
+        onMouseLeave={() => onMouseUp()}
+        onMouseOut={() => onMouseUp()}
+        onTouchEnd={() => onMouseUp()}
+        onTouchCancel={() => onMouseUp()}
       >
         {gameStart ? (
           <img

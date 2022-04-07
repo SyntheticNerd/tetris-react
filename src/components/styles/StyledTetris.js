@@ -46,7 +46,7 @@ export const StyledTetris = styled.div`
       grid-column: 1 / 2;
       grid-row: 1 / 2;
     } */
-    @media (max-width: 500px) {
+    @media (max-width: 437px) {
       grid-template-columns: 1fr 1fr;
       margin-top: 16px;
       margin-left: 0px;
