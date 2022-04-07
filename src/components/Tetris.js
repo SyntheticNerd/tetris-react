@@ -4,7 +4,6 @@ import { createStage, checkCollision } from "../gameHelpers";
 
 // Styled Components
 import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
-import { Score } from "./styles/StyledDisplay";
 
 // Custom Hooks
 import { useInterval } from "../hooks/useInterval";
@@ -106,7 +105,7 @@ const Tetris = () => {
     <StyledTetrisWrapper
       role='button'
       tabIndex='0'
-      onKeyDown={(e) => move(e)}
+      onKeyDown={(e) => move(e)}                 
       onKeyUp={keyUp}
     >
       <StyledTetris>
