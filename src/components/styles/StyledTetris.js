@@ -22,7 +22,7 @@ export const StyledTetris = styled.div`
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
     grid-template-rows: repeat(4, minmax(30px, auto));
-    gap: 8px 0px;
+    gap: 4px 0px;
     margin-top: 0px;
     margin-left: 16px;
     /* & > div:nth-child(1) {
