@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCell = styled.div`
     width: auto;
+    /* opacity: 0.2; */
     background: rgba(${props=>props.color}, 0.7);
     border: ${props => (props.type === 0 ? '0px solid' : "4px solid")};
     border-bottom-color: rgba(${props => props.color}, 0.1);

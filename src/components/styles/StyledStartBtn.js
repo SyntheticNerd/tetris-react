@@ -6,7 +6,7 @@ export const StyledStartBtn = styled.button`
   border: 1px solid;
   border-image: var(--gold-gradient) 1;
   color: ${({ gameOver, hover }) =>
-    gameOver && !hover ? "red" : "rgba(255, 255, 255, 0.6)"};
+    gameOver && !hover ? "#E10D00" : "rgba(255, 255, 255, 0.6)"};
   background: #1e1e1e;
   font-family: Pixel, Arial, Helvetica, sans-serif;
   font-size: min(0.8rem, 3.5vw);
