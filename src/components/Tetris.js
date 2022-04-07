@@ -15,10 +15,13 @@ import { useGameStatus } from "../hooks/useGameStatus";
 import Stage from "./Stage";
 import Display from "./Display";
 import StartBtn from "./StartBtn";
+import { KeyboardKey } from "./styles/KeyboardKey";
+import KeyBoard from "./KeyBoard";
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [gameStart, setGameStart] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -36,6 +39,7 @@ const Tetris = () => {
   const startGame = () => {
     console.log("test");
     // Reset everything
+    setGameStart(true);
     setStage(createStage());
     setDropTime(1000);
     resetPlayer();
@@ -58,17 +62,18 @@ const Tetris = () => {
       if (player.pos.y < 1) {
         console.log("GAME OVER!!!");
         setGameOver(true);
+        setGameStart(false);
         setDropTime(null);
       }
       updatePlayerPos({ x: 0, y: 0, collided: true });
     }
   };
 
-  const keyUp = ({ keyCode }) => {
+  const keyUp = (e) => {
     if (!gameOver) {
-      if (keyCode === 40) {
+      // if (e.keyCode === 40 || e === 40) {
         setDropTime(1000 / (level + 1) + 200);
-      }
+      // }
     }
   };
 
@@ -77,15 +82,17 @@ const Tetris = () => {
     drop();
   };
 
-  const move = ({ keyCode }) => {
+  const move = (e) => {
+    //have to add the prevent default so spacebar will work
     if (!gameOver) {
-      if (keyCode === 37) {
+      e.keyCode&&e.preventDefault();
+      if (e.keyCode === 37 || e === 37) {
         movePlayer(-1);
-      } else if (keyCode === 39) {
+      } else if (e.keyCode === 39 || e === 39) {
         movePlayer(1);
-      } else if (keyCode === 40) {
+      } else if (e.keyCode === 40 || e === 40) {
         dropPlayer();
-      } else if (keyCode === 32) {
+      } else if (e.keyCode === 32 || e === 32) {
         playerRotate(stage, 1);
       }
     }
@@ -120,6 +127,7 @@ const Tetris = () => {
             </div>
           )}
           <StartBtn callback={startGame} />
+          <KeyBoard gameStart={gameStart} move={move} keyUp={keyUp}/>
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>

@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
-import bgImage from "../../img/bg.png";
 
 export const StyledTetrisWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: url(${bgImage}) #000;
-  background-size: cover;
-  overflow: hidden;
+  /* background-color: #121212; */
+  --gold-gradient: linear-gradient(
+    #bf953f -65%,
+    #fcf6ba -26.33%,
+    #b38728 20.08%,
+    #fbf5b7 63.91%,
+    #aa771c 100%
+  );
+  border: 2px solid red;
 `;
 
 export const StyledTetris = styled.div`
@@ -15,13 +18,11 @@ export const StyledTetris = styled.div`
   align-items: flex-start;
   padding: 40px;
   margin: 0 auto;
-  max-width: 900px;
-
+  border: 2px solid green;
+  justify-content: center;
   aside {
-      width: 100%;
-      max-width: 200px;
       display: block;
-      padding: 0 20px;
-      
+      display: flex;
+      flex-direction: column;
   }
 `;
