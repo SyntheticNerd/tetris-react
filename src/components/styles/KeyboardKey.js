@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 export const KeyboardWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 40px);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 32px);
+    grid-template-rows: repeat(3, 38px);
     gap: min(16px, 2vh);
     & > button:nth-child(1) {
         grid-column: 2 / 3;
