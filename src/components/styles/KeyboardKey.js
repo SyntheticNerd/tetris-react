@@ -33,6 +33,8 @@ export const KeyboardKey = styled.button`
     & > img{
         /* display: none; */
         width: 100%;
+        touch-action: none;
+        pointer-events: none;
     }
     &:hover {
         transform: scale(1.05);
