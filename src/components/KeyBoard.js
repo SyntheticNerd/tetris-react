@@ -67,7 +67,7 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
     <KeyboardWrapper>
       <KeyboardKey
         onMouseDown={() => onMouseDown(40)}
-        onTouchStart={() => onMouseDown(40)}
+        // onTouchStart={() => onMouseDown(40)}
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -82,7 +82,7 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(37)}
-        onTouchStart={() => onMouseDown(37)}
+        // onTouchStart={() => onMouseDown(37)}
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -100,7 +100,7 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(40)}
-        onTouchStart={() => onMouseDown(40)}
+        // onTouchStart={() => onMouseDown(40)}
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -136,7 +136,7 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onMouseDown={() => onMouseDown(32)}
-        onTouchStart={() => onMouseDown(32)}
+        // onTouchStart={() => onMouseDown(32)}
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
