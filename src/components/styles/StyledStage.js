@@ -9,7 +9,7 @@ export const StyledStage = styled.div`
   /* width: 400px; */
   grid-gap: 1px;
   border: 2px solid #1e1e1e;
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
   /* width: 60vw; */
   /* max-width: 25vw; */
   background: #111;
