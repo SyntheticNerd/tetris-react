@@ -87,7 +87,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           e.type == "mousedown" &&
           onMouseDown(40)
         }
-        onMouseUp={() => onMouseUp()}
+        onMouseUp={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mouseup" &&
+          onMouseUp()
+        }
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
         onTouchEnd={() => onMouseUp()}
@@ -106,7 +110,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           e.type == "mousedown" &&
           onMouseDown(37)
         }
-        onMouseUp={() => onMouseUp()}
+        onMouseUp={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mouseup" &&
+          onMouseUp()
+        }
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
         onTouchEnd={() => onMouseUp()}
@@ -128,7 +136,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           e.type == "mousedown" &&
           onMouseDown(40)
         }
-        onMouseUp={() => onMouseUp()}
+        onMouseUp={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mouseup" &&
+          onMouseUp()
+        }
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
         onTouchEnd={() => onMouseUp()}
@@ -150,7 +162,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           e.type == "mousedown" &&
           onMouseDown(39)
         }
-        onMouseUp={() => onMouseUp()}
+        onMouseUp={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mouseup" &&
+          onMouseUp()
+        }
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
         onTouchEnd={() => onMouseUp()}
@@ -172,7 +188,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           e.type == "mousedown" &&
           onMouseDown(32)
         }
-        onMouseUp={() => onMouseUp()}
+        onMouseUp={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mouseup" &&
+          onMouseUp()
+        }
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
         onTouchEnd={() => onMouseUp()}
