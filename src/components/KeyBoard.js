@@ -20,7 +20,7 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
   function onMouseDown(code) {
     console.log(touching);
     if (!touching) {
-      console.log('click');
+      console.log("click");
       setKeyCode(code);
       setClicking(true);
       move(code);
@@ -53,13 +53,14 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           let t = setTimeout(() => {
             console.log("holding");
             setDropTime(30);
-          }, 500);
+          }, 300);
           setTimeoutId(t);
         } else if (keyCode === 39 || keyCode === 37) {
           if (!holding) {
             let t = setTimeout(() => {
               setHolding(true);
-            }, 500);
+              setMoveNum(moveNum + 1);
+            }, 300);
             setTimeoutId(t);
           } else if (holding) {
             move(keyCode);
@@ -81,7 +82,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
     <KeyboardWrapper>
       <KeyboardKey
         onTouchStart={() => onTouchStart(40)}
-        onMouseDown={(e) => typeof(window.ontouchstart) == 'undefined' && e.type == 'mousedown' && onMouseDown(40)}
+        onMouseDown={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mousedown" &&
+          onMouseDown(40)
+        }
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -96,7 +101,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onTouchStart={() => onTouchStart(37)}
-        onMouseDown={(e) => typeof(window.ontouchstart) == 'undefined' && e.type == 'mousedown' && onMouseDown(37)}
+        onMouseDown={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mousedown" &&
+          onMouseDown(37)
+        }
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -114,7 +123,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onTouchStart={() => onTouchStart(40)}
-        onMouseDown={(e) => typeof(window.ontouchstart) == 'undefined' && e.type == 'mousedown' && onMouseDown(40)}
+        onMouseDown={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mousedown" &&
+          onMouseDown(40)
+        }
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -132,7 +145,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onTouchStart={(e) => onTouchStart(39)}
-        onMouseDown={(e) => typeof(window.ontouchstart) == 'undefined' && e.type == 'mousedown' && onMouseDown(39)}
+        onMouseDown={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mousedown" &&
+          onMouseDown(39)
+        }
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
@@ -150,7 +167,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       </KeyboardKey>
       <KeyboardKey
         onTouchStart={() => onTouchStart(32)}
-        onMouseDown={(e) => typeof(window.ontouchstart) == 'undefined' && e.type == 'mousedown' && onMouseDown(32)}
+        onMouseDown={(e) =>
+          typeof window.ontouchstart == "undefined" &&
+          e.type == "mousedown" &&
+          onMouseDown(32)
+        }
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
