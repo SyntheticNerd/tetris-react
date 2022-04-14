@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Tetris - With React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I used react for this project for the pure purpose of practicing React.
 
-## Available Scripts
+[Checkout a hosted version here](https://syntheticdesigner.github.io/tetris-react/)
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Users should be able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] View the optimal layout for the site depending on their device's screen size
+- [x] Use keyboard keys to control the tetris board.
+- [x] View the their current score, number of rows cleared and current level of difficulty.
 
-### `npm run build`
+Stretch Goals:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Create touch friendly buttons for mobile use.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Future Development:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Create a pause button.
+- Create an info button that displays rules.
 
-### `npm run eject`
+### Screenshot
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Tetris ScreenShot](./tetris-screenshot.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Links
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Solution URL: [https://github.com/SyntheticDesigner/tetris-react](https://github.com/SyntheticDesigner/tetris-react)
+- Live Site URL: [https://syntheticdesigner.github.io/tetris-react/](https://syntheticdesigner.github.io/tetris-react/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## My process
 
-## Learn More
+### Built with
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/)
+- [React Interval](https://www.npmjs.com/package/react-interval)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I learned
 
-### Code Splitting
+Creating custom hooks make performing complex operations recursively much cleaner, a little extra set up goes a long way.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Handling both clicks and touch at the same time requires managing every aspect of each event and ensuring that events are not firing multiple times.
+> Click events are not the same as key presses and do not act the same what so ever.
 
-### Analyzing the Bundle Size
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [How to Build Tetris in React - GameDev Tutorial (with React Hooks!)](https://www.youtube.com/watch?v=ZGOaCxX8HIU)
 
-### Making a Progressive Web App
+I want to thank freeCodeCamp for this awesome walkthrough. I will be building on this app more in future to experiment with user input and interval.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Author
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [Andrew Schroepfer](https://syntheticdesigner.github.io/)
+- Social - [Linkedin](https://www.linkedin.com/in/andrew-schroepfer/)

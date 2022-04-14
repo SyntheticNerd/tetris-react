@@ -8,7 +8,6 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
   const [clicking, setClicking] = useState(false);
   const [holding, setHolding] = useState(false);
   const [moveNum, setMoveNum] = useState(0);
-  const [touching, setTouching] = useState(false);
   // const [horiz, setHoriz] = useState(0);
 
   // const repeat = useCallback(() => {
@@ -18,18 +17,12 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
   // }, [keyCode]);
 
   function onMouseDown(code) {
-    console.log(touching);
-    if (!touching) {
-      console.log("click");
       setKeyCode(code);
       setClicking(true);
       move(code);
-    }
   }
 
   function onTouchStart(code) {
-    console.log("touch");
-    setTouching(true);
     setKeyCode(code);
     setClicking(true);
     move(code);
@@ -38,7 +31,6 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
   function onMouseUp() {
     setClicking(false);
     setHolding(false);
-    setTouching(false);
     keyUp();
     clearTimeout(timeoutId);
     setTimeoutId(0);
@@ -51,7 +43,6 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
       if (clicking) {
         if (keyCode === 40) {
           let t = setTimeout(() => {
-            console.log("holding");
             setDropTime(30);
           }, 300);
           setTimeoutId(t);
@@ -65,12 +56,10 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           } else if (holding) {
             move(keyCode);
             let t = setTimeout(() => {
-              console.log("holding");
               setMoveNum(moveNum + 1);
             }, 100);
             setTimeoutId(t);
           } else {
-            console.log("doing nothing?");
             return;
           }
         }
