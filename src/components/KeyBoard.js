@@ -18,9 +18,11 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
   // }, [keyCode]);
 
   function onMouseDown(code) {
-    setKeyCode(code);
-    setClicking(true);
-    move(code);
+    if (!touching) {
+      setKeyCode(code);
+      setClicking(true);
+      move(code);
+    }
   }
 
   function onMouseUp() {
@@ -154,7 +156,7 @@ export default function KeyBoard({ gameStart, move, keyUp, setDropTime }) {
           setTouching(true);
           onMouseDown(32);
         }}
-        onMouseDown={() => !touching && onMouseDown(32)}
+        onMouseDown={() => onMouseDown(32)}
         onMouseUp={() => onMouseUp()}
         onMouseLeave={() => onMouseUp()}
         onMouseOut={() => onMouseUp()}
