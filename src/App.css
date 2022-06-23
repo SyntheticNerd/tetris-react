@@ -1,4 +1,4 @@
 .App{
-    background-color: #101010;
+    background-image: linear-gradient(180deg, #232541, #1e3962);
     min-height: calc(100vh);
 }

@@ -8,6 +8,9 @@ export const StyledTetrisWrapper = styled.div`
     #fbf5b7 63.91%,
     #aa771c 100%
   );
+    display: grid;
+    place-items: center;
+    height: 100vh;
 `;
 
 export const StyledTetris = styled.div`
@@ -15,8 +18,8 @@ export const StyledTetris = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   padding: min(40px, 2vw);
-  margin: auto;
-  justify-content: center;
+  width: max-content;
+  /* justify-content: center; */
   aside {
     display: block;
     display: grid;
