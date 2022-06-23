@@ -18,8 +18,8 @@ export const StyledTetris = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   padding: min(40px, 2vw);
-  width: max-content;
-  /* justify-content: center; */
+  /* width: max-content; */
+  justify-content: center;
   aside {
     display: block;
     display: grid;

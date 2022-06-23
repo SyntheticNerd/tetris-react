@@ -23,6 +23,7 @@ export const KeyboardWrapper = styled.div`
 export const KeyboardKey = styled.button`
     display: flex;
     width: ${(props)=>props.width?props.width:"100%"};
+    height: min-content;
     border: none;
     outline: none;
     padding: 0;
